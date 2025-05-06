@@ -139,12 +139,12 @@ elif page == "Country Insights":
     with col1:
         #[CHART1]
         sales_series.plot(kind="bar", color="grey")
-        plt.ylabel("Sales ($billions")
+        plt.ylabel("Sales ($billions)")
         plt.title("Total Company Sales by Country (Top 20 Countries)")
         st.pyplot(plt)
     with col2:
         country_selection = st.selectbox("Select Nation:", (sales_series.nlargest(20).index)) #AI CODE 8: Code for  creating selectbox and metric output was based on CHATGPT
-        st.metric(f"{country_selection}'s Total Sales", f"${round(country_sales_dict[country_selection],2)}")
+        st.metric(f"{country_selection}'s Total Sales (B)", f"${round(country_sales_dict[country_selection],2)}")
 
 
     st.subheader("Revenue Summary for Companies of Selected Nations")
